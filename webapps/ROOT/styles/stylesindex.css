@@ -1,0 +1,78 @@
+body {
+	font-family:Verdana; font-size:8px
+}
+
+.erro { 
+	font-size: 10px; 
+}
+
+.pesquisa {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #000000;
+	background-color: #FFFFFF;
+	border: 1px solid #353969;
+	width: 110px;
+	text-indent: 3px;
+}
+//na parte de baixo mudamos as cores do links da tabela de agenda que está no site
+.marquee A  {text-decoration: none;}
+.marquee A:link  {color: #000000;}
+.marquee A:visited  {color: #000000;}
+.marquee A:hover  {color: #FF0000;}
+
+.marquee {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000000;
+
+	
+}
+
+input.botaologin {
+		font-family: Verdana, Arial, Helvetica, sans-serif;
+		font-size: 9px;
+		color: #FEFEFE;
+		background-color: #353969;
+		border: 1px solid #353969;
+		width: 53px;
+}
+
+input.botaologinover {
+		font-family: Verdana, Arial, Helvetica, sans-serif;
+		font-size: 9px;
+		color: #353969;
+		background-color: #FEFEFE;
+		border: 1px solid #353969;
+		width: 53px;
+}
+
+input.textfield {
+		border: 1px solid #000000;
+		font-size: 11px;
+		font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+.endereco{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: bolder;
+	color: #5F5E5E;
+}
+
+.search {
+	font-size: 12px;
+	background-color: white;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #939598;
+	border-right-color: #939598;
+	border-bottom-color: #939598;
+	border-left-color: #939598;
+}

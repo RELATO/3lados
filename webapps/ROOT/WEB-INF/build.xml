@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<project name="compilar" default="compile">
+	<target name="clean" description="remove arquivos intermediarios">
+		<delete dir="classes" />
+	</target>
+	<target name="compile" depends="clean" description="compila o fonte Java do arquivo class">
+		<mkdir dir="classes" />
+		<javac srcdir="src" destdir="classes" deprecation="false" encoding="iso-8859-1">
+			<classpath> 
+				<fileset dir="lib" > 
+					<include name="*.jar"/> 
+				</fileset> 
+			</classpath> 
+		</javac>
+		<copy toDir="classes/br/com/relato/extranet/model">
+			<fileset dir="src/br/com/relato/extranet/model" includes="**/*.xml"/>
+		</copy>
+
+	</target>
+	
+	<target name="war" >
+		<delete dir="dist" />
+		<mkdir dir="dist" />
+		<war warfile="dist/3lados.war" webxml="web.xml">
+			<webinf dir="." excludes="web.xml, lib/**" includes="**/*" />
+			<lib dir="lib" includes="*.jar" />
+			<classes dir="classes">
+				<include name="**/*.class" />
+			</classes>
+			<fileset dir="../">
+				<include name="**" />
+				<exclude name="WEB-INF/**" />
+				<exclude name="META-INF/**" />
+			</fileset>
+		</war>
+	</target>
+
+</project>

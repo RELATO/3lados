@@ -1,0 +1,1043 @@
+/* --- inicio ---------------------------------------------------------------------------------------------------------- */
+
+body {
+	margin: 0px;
+	background-image:url(../images/bg_body.gif);
+	}
+
+* { font-family:Arial; font-size:11px; color:#000000; }  
+
+
+
+/* --- geral -------------------------------------------------------------------------------------------------------------- */
+
+
+#wrap {
+	position:absolute;
+	width:716px;
+	left:50%;
+	margin-left:-358px;
+	background-image:url(../images/bg_corpo.gif);
+	background-repeat:repeat-y;
+	}
+
+#wrap_popup {
+
+	}	
+	
+
+/* --- header ---------------------------------------------------------------------------------------------------------- */
+
+#header {
+	background-image:url(../images/bg_header.gif);
+	background-repeat:no-repeat;
+	height:93px;
+	padding: 0px 20px 0px 20px;
+	}
+	
+#head_e {
+	float:left;
+	background-image:url(../images/bg_head_left.gif);
+	background-repeat:repeat-x;
+	width:225px;
+	height:18px;
+	padding-top:1px;
+	}
+
+#head_e a {
+	color:#000000;
+	padding:0px 5px;
+	text-decoration:none;
+	}
+	
+#head_e a:hover {
+	color:#000000;
+	text-decoration:underline;
+	}
+	
+#head_d {
+	float:right;
+	width:250px;
+	}
+	
+	
+#menu_d {	
+	background-image:url(../images/bg_head_right.gif);
+	background-repeat:repeat-x;
+	width:250px;
+	height:18px;
+	padding-top:1px;
+	}
+	
+#menu_d a {
+	color:#000000;
+	padding:0px 2px;
+	text-decoration:none;
+	}
+	
+#menu_d a:hover {
+	color:#000000;;
+	text-decoration:underline;
+	}
+	
+#busca {
+	width:135px;
+	float:right;
+	margin-top:19px;
+	}
+	
+#busca a {
+	font-size:9px;
+	color:#000000;
+	}
+		
+#busca a:hover {
+	font-size:9px;
+	color:#FFFFFF;
+	text-decoration:none;
+	background-color:#990000;
+	}
+
+#login_top {
+	width:200px;
+	float:left;
+	margin-top:19px;
+	}
+	
+	
+/* --- menu ------------------------------------------------------------------------------------------------------------- */
+
+#menu {
+	width:716px;
+	position:relative;
+	padding:0px 1px;
+	z-index:2;
+}
+#menu ul {
+	padding:0px;
+	margin:0px;
+	list-style:none;
+}
+#menu ul li {
+	display: inline; 
+	position:relative;
+	float:left;
+	background-image:url(../images/bg_menu.gif);
+	background-repeat:repeat-x;
+	height:17px;
+}
+#menu ul li a{
+	font-size:11px;
+	font-weight:bold;
+	color:#333333;
+	text-decoration:none;
+	padding:0px 30px;
+	border-left:1px solid #FFFFFF;
+	border-right:1px solid #FFFFFF;
+}
+#menu ul li a:hover{
+	color:#FFFFFF;
+	background-image:url(../images/bg_menu_over2.gif);
+}
+#menu li ul {
+	width:150px;
+	display: none;
+	position: absolute;
+	border:1px solid #D2D2D2;
+	top:17px;
+	left:0px;
+	z-index:2;
+}
+#menu li:hover ul, #menu li.over ul { display:block; z-index:2;}
+
+#menu li ul li{
+	background-image:none;
+	width:150px;
+	background-color:#ffffff;
+	padding:2px 0px 2px 0px;
+	z-index:2;
+}
+
+#menu ul li ul li a{
+	color:#333333;
+	padding:10px;
+	border:none;
+	z-index:2;
+	margin-left:20px;
+	margin-top:3px;
+}
+	
+#menu li ul li a:hover {
+	color:#CC0000;
+	background-image:url(../images/bullet_dropdown.gif);
+	background-repeat:no-repeat;
+	background-position:-1px 14px;
+	border:none;
+	z-index:2;
+}
+
+
+
+
+
+/* --- catálogo --------------------------------------------------------------------------------------------------------- */
+
+#catalogo ul {
+	padding:0px;
+	margin:0px;
+	list-style:none;
+}
+
+#catalogo ul li{
+	background-image:url(../images/bt_catalogo.gif);
+	background-repeat:no-repeat;
+	width:157px;
+	height:18px;
+	margin-top:2px;
+	padding-top:4px;
+}
+
+#catalogo ul li a{
+	height:18px;
+	text-decoration:none;
+	font-size:11px;
+	padding-left:25px;
+	top:5px;
+}
+#catalogo ul li a:hover{
+	color:#CC0000;
+	text-decoration:underline;
+}
+
+#catalogo_selected{
+	color:#CC0000;
+	text-decoration:underline;
+} 
+
+
+/* --- miolo ------------------------------------------------------------------------------------------------------------- */
+
+#destaque{
+	margin-top:17px;
+	width:367px;
+	height:152px;
+	border:1px solid #D0D0D0;
+	z-index:-1;
+}
+
+#bg_destaque{
+	width:365px;
+	height:150px;
+	border:1px solid #FFFFFF;
+	background-color:#EFEFEF;
+	background-image:url(../images/bg_destaque.gif);
+	background-repeat:no-repeat;
+	background-position:5px 9px;
+	z-index:-1;
+}
+#selebot {
+	width:47px;
+	position:relative;
+	float:right;
+	margin-top:4px;
+}
+#seletor {
+	width:80px;
+	position:relative;
+	margin-left:230px;
+	margin-top:7px;
+	
+	z-index:1;
+}
+#seletor ul {
+	padding:0px;
+	margin:0px;
+	list-style:none;
+	z-index:1;
+}
+#seletor ul li {
+	display: inline; 
+	position:relative;
+	float:left;
+	font-size:16px;
+	font-weight:bold;
+	color:#000000;
+	z-index:1;
+}
+#seletor ul li a {
+	font-size:16px;
+	font-weight:bold;
+	color:#000000;
+	padding:2px 3px 1px 3px;
+	margin:0px 1px;
+	text-decoration:none;
+	z-index:1;
+}
+
+.selector_sel {
+	text-decoration:none;
+	background-color:#FFFFFF;
+}
+
+.selector_norm {
+	display: inline; 
+	position:relative;
+	float:left;
+	font-size:16px;
+	font-weight:bold;	
+}
+
+.txt_destaque {
+	width:353px;
+	margin:5px 5px 0px 5px;
+}
+
+.txt_destaque img {
+	border:1px solid #000066;
+	margin-right:7px;
+}
+
+#seletor ul li a:hover{
+	color:#FFFFFF;
+	text-decoration:none;
+	background-color:#CC0000;
+}
+
+#lançamento {
+	padding-top:25px;
+}
+#barra {
+	background-image:url(../images/hometitle_lanca.gif);
+	background-repeat:no-repeat;
+}
+#tabela_lançamentos {
+	margin-top:10px;
+}
+#descricao {
+	font-size:10px;
+	padding:0px 5px 25px 5px;
+	}
+#descricao strong {
+	font-size:11px;
+	color:#EC6419;
+	}
+
+
+/* --- circulando o professor ------------------------------------------------------------------------------------------- */
+	
+#circulando {
+	background-color:#FFFBEB;
+	background-image:url(../images/bg_circulando.gif);
+	background-repeat:no-repeat;
+	background-position:bottom;
+	margin-top:-3px;
+	padding:10px 10px 0px 10px;
+	}
+	
+#circulando strong{
+	font-size:12px;
+	}
+#circulando a{
+	color:#CC0000;
+	text-decoration:none;
+	font-weight:bold;
+	}
+#circulando a:hover{
+	color:#990000;
+	text-decoration:underline;
+	font-weight:bold;
+	}
+	
+#ad {
+	font-size:9px;
+	margin-top:10px;
+	padding-bottom:10px;
+	}
+	
+#salaprof {
+	background-color:#EBEEF4;
+	color:#001A66;
+	font-weight:bold;
+	margin-top:-12px;
+	padding:0px 10px 0px 10px;
+	}
+	
+/* --- comercio eletronico ------------------------------------------------------------------------------------------- */	
+
+#barra_comercio {
+	margin-top:15px;
+	}
+
+
+#comercio {	
+	margin-top:20px;	
+	background-color:#EFEFEf;
+	color:#666666;
+	padding:5px;
+	}
+#comercio img{
+	margin:0px 20px;
+	}
+
+#endereco_entrega {
+	margin-top:15px;
+	width:660px;
+	float:left;
+	padding:8px;
+	background-color:#eeeeee;
+	}
+#formas_pagto {
+	margin-top:15px;
+	width:660px;
+	float:left;
+	padding:8px;
+	border:1px solid #EEEEEE;
+	}
+
+
+	
+/* --- ficha do livro ------------------------------------------------------------------------------------------------ */
+
+#ficha {
+	width:664px;
+	float:left;
+	margin-top:5px;
+	background-color:#FFF9D3;
+	padding:6px;
+	clear:both;
+	margin-bottom:5px;
+	}
+	
+#info_livro {
+	width:250px;
+	float:right;
+	}
+
+#tabela_info {
+	border-top:1px solid #DCCF7B;
+	margin-top:8px;
+}
+#quesito {
+	color:#9D8800;
+	font-weight:bold;
+	padding:5px 0px;	
+	border-bottom:1px solid #DCCF7B;
+}
+#info {
+	padding:5px 0px;	
+	border-bottom:1px solid #DCCF7B;	
+}	
+	
+#capa {	
+	width:132px;
+	height:189px;
+	}
+#capa img {
+	border:1px solid #333333;
+	}
+	
+#about {
+	margin:-189px 0px 0px 140px;
+	position:relative;
+	left:20px;
+	width:240px;
+}
+#about_livro strong {
+	color:#A70000;
+	font-size:16px;
+}
+#about_livro a {
+	font-size:12px;
+	line-height:22px;
+}	
+#about_livro a:hover {
+	text-decoration:none;
+	color:#9D8800;
+}
+#about_util {
+	margin-top:40px;
+	}
+	
+#resumo {
+	clear:both;
+	margin-top:5px;
+	border-top:1px solid #A70000;
+	padding-top:10px;
+	}
+#resumo_txt {
+	float:left;
+	width:410px;
+	font-size:12px;
+	text-align:justify;
+	}
+#resumo_util {
+	color:#003366;
+	float:right;
+	width:245px;
+	padding:5px;
+	background-color:#EBEEF4;
+	}
+#resumo_util strong {
+	color:#003366;
+	}	
+#relacionados {
+	clear:both;
+	margin-top:10px;
+	border-top:1px solid #A70000;
+	border-bottom:1px solid #A70000;
+	padding-top:5px;
+	}
+#relatable {
+	width:675px;
+	background-color:#EEEEEE;
+	padding:5px;
+	margin-bottom:5px;
+	}
+#txt_relacionado {
+	width:100px;
+	}
+#txt_relacionado2 {
+	width:200px;
+	}
+#not_relacionados {
+	clear:both;
+	margin-top:10px;
+	border-bottom:1px solid #A70000;
+	padding-top:5px;
+	}
+#opiniao_leitor	{
+	width:675px;
+	border:1px solid #D2D2D2;
+	padding:5px;
+	margin-top:10px;
+}
+#opina_txt {
+	border-bottom:1px solid #ededed;
+	padding:20px 0px;
+	margin-left:110px;
+	}
+#opina_util {
+	margin-top:10px;
+	margin-left:540px;
+	}
+#opina_util a {
+	font-weight:bold;
+	}
+#opina_util a:hover {
+	color:#A70000;
+	text-decoration:none;
+	}
+	
+#livro_result_a {
+	width:100%;
+	float:left;
+	padding:8px;
+	}
+#livro_result_b {
+	width:98%;
+	float:left;
+	padding:8px;
+	background-color:#EEEEEE;
+	}	
+	
+#not_descrit {
+	width:640px;
+		}	
+#not_descrit em {
+	font-size:10px;
+	color:#000066;
+		}
+	
+#livro_descrit {
+	width:500px;
+		}	
+#livro_descrit img, #not_descrit img  {
+	margin-right:8px;
+	}
+#livro_descrit strong, #not_descrit strong  {
+	color:#CC0000;
+	font-size:12px;
+	}
+#livro_descrit a, #not_descrit a  {
+	color:#CC0000;
+	text-decoration:none;
+	font-weight:bold;
+	}
+#livro_descrit a:hover, #not_descrit a:hover {
+	color:#990000;
+	text-decoration:underline;
+	}
+#descrit_util {
+	width:140px;
+	float:right;
+	line-height:18px;
+	padding:3px;
+	}
+#descrit_util a {
+	color:#000066;
+	text-decoration:none;
+	font-weight:bold;
+	}
+#descrit_util a:hover {
+	color:#A70000;
+	text-decoration:underline;
+	}
+#alta_result_a {
+	width:98%;
+	padding:8px;
+	}
+#alta_result_b {
+	width:98%;
+	padding:8px;
+	background-color:#EEEEEE;
+	}	
+#alta_esq {
+	height:100px;
+	width:310px;
+		}
+#alta_dir {
+	height:100px;
+	width:310px;
+	float:right;
+	}
+
+/* --- home mais informações ------------------------------------------------------------------------------------------- */
+
+#moreinfo {
+	background-image:url(../images/bg_maisinfo.gif);
+	background-repeat:no-repeat;
+	height:58px;
+	padding:30px 0px 0px 26px;
+	margin-top:4px;
+}
+
+#moreinfo ul {
+	padding:0px;
+	margin:0px;
+	list-style:square;
+}
+
+#moreinfo ul li {
+	line-height:22px;
+}
+
+#moreinfo ul li a {
+	color:#000066;
+	text-decoration:none;
+}
+#moreinfo ul li a:hover {
+	color:#A70000;
+	text-decoration:underline;
+}
+
+#premiado {
+	margin:4px 0px 5px 0px;
+	}
+
+
+
+/* --- conteudos --------------------------------------------------------------------------------------------------------- */
+
+#conteudo {
+	padding: 0px 20px;
+	}
+	
+#content_e {
+	margin-top:20px;
+	float:left;
+	width:157px;
+	}
+	
+#content_d {
+	width:124px;
+	margin-top:20px;
+	float:right;
+	background-color:#FFFFFF;
+	}
+
+#content_c {
+	width:367px;
+	margin-left:170px;
+	padding-top:20px;
+	}
+	
+/* --- internas --------------------------------------------------------------------------------------------------------- */
+
+#barra_titulo {
+	margin-top:25px;
+	background-color:#FFF089;
+	}
+	
+#txt_geral, #not_geral {
+	font-size:12px;
+	padding-bottom:15px;
+	border-bottom:1px solid #FFCC33;
+	line-height:18px;
+	}
+
+#txt_geral p, #not_geral p {
+	font-size:12px;
+	}
+	
+#txt_geral h1 {
+	color:#A70000;
+	font-size:12px;
+	font-weight:bold;
+	}
+
+.h1_cad {
+	color:#A70000;
+	font-size:12px;
+	font-weight:bold;
+	}
+	
+#txt_geral a, #not_geral a {
+	font-size:12px;
+	color:#A70000;
+	text-decoration:none;
+	}	
+#txt_geral a:hover, #not_geral a:hover {
+	color:#000000;
+	text-decoration:underline;
+	}
+
+.false_link {
+	font-size:12px;
+	color:#A70000;
+	text-decoration:none;
+	cursor:pointer;
+	}	
+
+#not_geral h1 {
+	color:#A70000;
+	font-size:12px;
+	font-weight:bold;
+	margin:15px 0px 0px 0px;
+	}
+	
+#not_geral em {
+	font-size:10px;
+	color:#000066;
+	}
+
+#img_left {
+	margin-right:5px;
+	}
+	
+		
+	
+/* --- menu interno ----------------------------------------------------------------------------------------------------- */
+
+#menu_interno {
+	margin-top:1px;
+	border-bottom:1px solid #FFCC33;
+	border-top:1px solid #FFCC33;	
+	}
+
+#menu_interno ul{
+	margin-top:2px;
+	margin-bottom:2px;
+	}
+	
+#menu_interno ul li {
+	display:inline;
+	font-weight:bold;
+	padding:0px 30px;
+	border-left:1px solid #333333;
+	}
+	
+#menu_interno ul li a{
+	text-decoration:none;
+	color:#000000;	
+	}
+#menu_interno ul li a:hover{
+	color:#A70000;
+	text-decoration:underline;
+	}
+	
+.lastlink {
+	border-right:1px solid #333333;
+	}
+
+.menu_interno_norm {
+	text-decoration:none;
+	color:#000000;
+    }	
+	
+.menu_interno_sel {
+	color:#A70000;
+    }
+    
+.menu_interno_hover {
+	color:#A70000;
+	text-decoration:underline;
+	cursor:pointer;
+    }
+	
+/* --- autores --------------------------------------------------------------------------------------------------------- */	
+
+#autores_search {
+	margin-top:30px;
+	}
+#autores_search a {
+	color:#000066;
+	text-decoration:none;
+	font-weight:bold;
+	margin-left:20px;
+	}
+#autores_search a:hover {
+	color:#A70000;
+	text-decoration:underline;
+	}
+	#autores_search2 {
+	margin-top:30px;
+	}
+#autores_search2 a {
+	color:#000066;
+	text-decoration:none;
+	font-weight:bold;
+	}
+#autores_search2 a:hover {
+	color:#A70000;
+	text-decoration:underline;
+	}
+#autores_result_a {
+	width:98%;
+	padding:8px;
+	}
+	
+#autores_result_b {
+	width:98%;
+	padding:8px;
+	background-color:#eeeeee;
+	}
+
+	
+#autores_result_a strong, #autores_result_b strong {
+	color:#A70000;
+	}
+#autores_result_a a, #autores_result_b a {
+	color:#CC0000;
+	font-weight:bold;
+	text-decoration:none;
+	}
+#autores_result_a a:hover, #autores_result_b a:hover {
+	color:#990000;
+	font-weight:bold;
+	text-decoration:underline;
+	}
+#autores_result_a img, #autores_result_b img {
+	margin-right:8px;
+	}
+	
+#ficha_autor {
+	float:left;
+	margin-top:25px;
+	margin-bottom:10px;
+	background-color:#EBEEF4;
+	padding:6px;
+	width:675px;
+	}
+#ficha_autor strong {
+	color:#A70000;
+	font-size:16px;
+	}
+#ficha_autor img {
+	margin-right:6px;
+	}	
+
+	
+/* --- procura --------------------------------------------------------------------------------------------------------- */
+
+#pagina_search {
+	margin:15px 0px 10px 0px;
+	}
+#pagina_search strong {
+	color:#A70000;
+	}
+#pagina_search a {
+	text-decoration:none;
+	color:#CC0000;
+	font-weight:bold;
+	}
+#pagina_search a:hover {
+	color:#990000;
+	text-decoration:underline;
+	}
+#numero_result {
+	margin:10px 0px 30px 0px;
+	}
+#numero_result strong {
+	color:#A70000;
+	font-size:12px;
+	}
+#busca_av {
+	width:550px;
+	float:left;
+	margin-bottom:15px;
+	margin-top:15px;
+	}
+
+#busca_av #nomes {
+	color:#A70000;
+	font-weight:bold;
+	padding:3px;
+	}
+	
+#busca_av #forms {
+	padding:3px;
+	}
+
+
+/* --- footer --------------------------------------------------------------------------------------------------------- */
+
+#footer {
+	background-image:url(../images/bg_body.gif);
+	margin-top:-3px;
+	}
+
+#footer a {
+	color:#A70000;
+	}
+#footer a:hover {
+	color:#FFFFFF;
+	background-color:#A70000;
+	text-decoration:none;
+	}	
+
+
+/* --- classes --------------------------------------------------------------------------------------------------------- */
+
+.form_busca {
+	width:135px;
+	border:1px solid #000000;
+	font-size:10px;
+	color:#000000;
+	height:12px;
+	}
+.form_busca2 {
+	width:100px;
+	border:1px solid #000000;
+	font-size:10px;
+	color:#000000;
+	height:12px;
+	}
+.form_busca3 {
+	width:75px;
+	border:1px solid #000000;
+	font-size:10px;
+	color:#000000;
+	height:12px;
+	}
+.form_comment {
+	width:300px;
+	border:1px solid #000000;
+	font-size:10px;
+	color:#000000;
+	height:135px;
+	}
+.form_txt_tiny {
+	width:24px;
+	border:1px solid #000000;
+	font-size:10px;
+	color:#000000;
+	height:12px;
+	}
+.form_txt_med {
+	width:100px;
+	border:1px solid #000000;
+	font-size:10px;
+	color:#000000;
+	height:12px;
+	}	
+.form_textarea_small {
+	width:200px;
+	border:1px solid #000000;
+	font-size:10px;
+	color:#000000;
+	height:70px;
+	}	
+.form_textarea_med {
+	width:300px;
+	border:1px solid #000000;
+	font-size:10px;
+	color:#000000;
+	height:200px;
+	}
+.form_textarea_big {
+	width:400px;
+	border:1px solid #000000;
+	font-size:10px;
+	color:#000000;
+	height:300px;
+	}		
+.form_busca_adv {
+	width:135px;
+	border:1px solid #000000;
+	font-size:11px;
+	color:#000000;
+	height:10px;
+	}
+.select {
+	border:1px solid #000000;
+	font-size:10px;
+	color:#000000;
+	height:12px;
+	}	
+.drop_busca {
+	width:70px;
+	border:1px solid #000000;
+	font-size:10px;
+	color:#000000;
+	height:12px;
+	}
+.tabelacompra_topo {
+	background-color:#e2e2e2;
+	color:#000000;
+	}
+.tabelacompra_par {
+	background-color: #f2f2f2;
+	}
+.cad_form_tit { 
+	color:#0066CC;
+	font-weight:bold;
+	font-size:11px;
+}
+
+.caixa_body {
+	width:670px;
+	margin-top:160px;
+	margin-bottom:40px;
+}
+
+.caixa_end_box {
+	width:97%;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:11px;
+	margin-top:3px;
+	background-color:#EEEEEE;
+	padding:5px
+}
+
+.cesta_box {
+	background-color:#FFFFFF;
+}
+
+.forma_pag_table {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:11px;
+	color:#666666;
+	background-color:#FFFFFF;
+}
+
+.tre_sum_popup {
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+.pedEletroCol {
+	width:220px;
+	float:left;
+	font-size:9px;
+}	
+

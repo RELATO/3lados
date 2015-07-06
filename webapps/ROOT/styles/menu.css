@@ -1,0 +1,176 @@
+BODY
+{
+	FONT-FAMILY:tahoma;
+	background-color:#FFFFFF;
+	background-repeat: repeat-y;
+}
+
+
+TD.menu1
+{
+	FONT-FAMILY:tahoma;
+	font-size:70%;
+}
+
+TD.menuWB
+{
+	FONT-FAMILY:tahoma;
+	font-size:70%;
+	border:1px solid #bbbbbb;
+}
+
+TD.menuW
+{
+	FONT-FAMILY:tahoma;
+	font-size:70%;
+}
+
+
+TD.menu2
+{
+	FONT-FAMILY:tahoma;
+	font-size:70%;
+	background-color:#ffffff;
+}
+
+td.login
+{
+	FONT-FAMILY:tahoma;
+	font-size:70%;
+}
+
+
+
+TD.borderB {
+	background-color:#000080;
+}
+
+TD.bckB {
+font-size:70%;
+	background-color:#dffcff;
+}
+
+.backG {
+FONT-FAMILY:tahoma;
+background-color:#93c39b; 
+color:#ffffff; 
+border-bottom:#538c4d 2px solid;
+
+}
+
+.backR {
+FONT-FAMILY:tahoma;
+background-color:#FD8F8A; 
+color:#ffffff; 
+border-bottom:#D60E03 2px solid;
+}
+
+.backB {
+FONT-FAMILY:tahoma;
+background-color:#dae8f4;
+color:#000099; 
+border-bottom:#6699ff 2px solid;
+}
+
+
+TD.backW {
+FONT-FAMILY:tahoma;
+background-color:#ffffff;
+font-size:70%;
+}
+
+
+p.headp
+{
+	font-size:110%;
+	font-weight:bold
+}
+
+p.textp
+{
+	
+}
+
+
+td.form1
+{
+	FONT-FAMILY:tahoma;
+	background:#eaeaea;
+	font-size:70%;
+}
+
+td.form2
+{
+	FONT-FAMILY:tahoma;
+	background:#93c39b;
+	font-size:70%;
+}
+
+td.form3
+{
+	FONT-FAMILY:tahoma;
+	background:#dddddd;
+	font-size:70%;
+}
+
+
+th.form1
+{
+	FONT-FAMILY:tahoma;
+	background:#eeeeee;
+}
+
+td.tdbord1
+{
+	border:1px solid black;
+	border-left-width:1px;
+	border-left-color:#aaaaaa;
+	border-left-style:solid;
+}
+
+
+a.menuitem
+{
+	font-Weight:bold;
+	font-style:italic;
+}
+
+P.code{
+	font-weight:bold;
+	font-style:italic;
+	padding:12px;
+	background:#f0eedd;
+	border:1px #aaaaaa groove;
+}
+
+.clsMilonicTestOn
+{
+ background-color: #C1D2EE;
+ color: #000000;
+}
+.clsMilonicTestOff
+{
+ background-color: #EFEDDE;
+ color: #ff0000;
+}
+
+
+.menuon
+{
+	font-size: 10pt;
+	background: #ccccff;
+	color: #000000;
+	
+	font-style:normal;
+	font-family: Tahoma;
+}
+
+.menuoff
+{
+	font-size: 10pt;
+	background: #ffff00;
+	color: #ffffff;
+	
+	font-style:italic;
+	font-family: Tahoma;
+}

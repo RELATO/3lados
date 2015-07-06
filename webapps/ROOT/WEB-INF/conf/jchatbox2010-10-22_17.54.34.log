@@ -1,0 +1,11 @@
+2010/10/22 17:54:34 jChatBox.Util.Debug => 2.6
+2010/10/22 17:54:34 jChatBox Init() ... => /www/sitedgs/webapps/ROOT/WEB-INF/conf/jchatbox.xml
+2010/10/22 17:54:34 jChatBox.Util.XMLConfig => File "file:///www/sitedgs/webapps/ROOT/WEB-INF/conf/jchatboxusers.xml" not found.
+2010/10/22 17:54:34 Cannot read moderators :  => /www/sitedgs/webapps/ROOT/WEB-INF/conf/jchatboxusers.xml
+2010/10/22 17:54:34 jChatBox.Util.XMLConfig => jChatBox.Chat.Transcript.TextDump loaded
+2010/10/22 17:54:34 jChatBox.Util.XMLConfig => resources_en.xml loaded from classpath
+2010/10/25 13:40:25 jChatBox destroy() ... => 
+2010/10/25 13:40:25 jChatBox.Util.XMLConfig => /www/sitedgs/webapps/ROOT/WEB-INF/conf/jchatbox.ser read
+2010/10/25 13:40:25 jChatBox.Chat.ChatroomManager => Chatrooms loaded.
+2010/10/25 13:40:25 jChatBox.Util.XMLConfig => /www/sitedgs/webapps/ROOT/WEB-INF/conf/jchatbox.ser written
+2010/10/25 13:40:25 jChatBox.Chat.ChatroomManager => Chatrooms Backup done.

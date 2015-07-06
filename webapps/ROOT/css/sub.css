@@ -1,0 +1,17 @@
+
+/*--- Istege Bagli ---*/	
+.inputWrap input, .inputWrap textarea {
+	padding:0 0 0px 0px;
+	height:22px; 
+	border-top:#ddd 1px solid; 
+	border-left:#ddd 1px solid; 
+	border-right:#a9a9a9 2px ridge; 
+	border-bottom:#a9a9a9 2px ridge; 
+	border-left:#ddd 1px solid; 
+	font-size:13px;
+	font-family:verdana, Arial, Helvetica, sans-serif;
+	background-color:#fff;
+	width:166px;
+	}
+.inputWrap textarea {width:400px; height:100px; padding:5px; overflow:auto}
+

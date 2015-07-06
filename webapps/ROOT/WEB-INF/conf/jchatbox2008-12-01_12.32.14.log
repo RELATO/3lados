@@ -1,0 +1,13 @@
+2008/12/01 12:32:14 jChatBox.Util.Debug => 2.6
+2008/12/01 12:32:14 jChatBox Init() ... => /www/controllerplus/webapps/ROOT/WEB-INF/conf/jchatbox.xml
+2008/12/01 12:32:14 jChatBox.Util.XMLConfig => jChatBox.Chat.Filter.HTMLFilter loaded
+2008/12/01 12:32:14 jChatBox.Util.XMLConfig => jChatBox.Chat.Filter.URLFilter loaded
+2008/12/01 12:32:14 jChatBox.Util.XMLConfig => jChatBox.Chat.Transcript.TextDump loaded
+2008/12/01 12:32:14 jChatBox.Util.XMLConfig => resources_sv.xml loaded
+2008/12/01 12:32:14 jChatBox.Util.XMLConfig => resources_fr.xml loaded
+2008/12/01 12:32:14 jChatBox.Util.XMLConfig => resources_pt.xml loaded
+2008/12/01 12:32:14 jChatBox.Util.XMLConfig => resources_en.xml loaded
+2008/12/01 12:32:14 jChatBox.Util.XMLConfig => resources_da.xml loaded
+2008/12/01 12:32:14 jChatBox.Util.XMLConfig => resources_de.xml loaded
+2008/12/01 12:32:14 jChatBox.Util.XMLConfig => resources_es.xml loaded
+2008/12/01 12:32:14 jChatBox.Util.XMLConfig => resources_nl.xml loaded

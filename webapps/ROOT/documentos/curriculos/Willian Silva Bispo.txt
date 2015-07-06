@@ -1,0 +1,413 @@
+<%@ page contentType="text/html; charset=windows-1252" %>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<%@page import="java.util.Date"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.Iterator"%>
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="br.com.relato.util.Cast"%>
+<%@page import="java.util.List"%>
+<%@page import="java.sql.SQLException"%>
+<%@page import="java.util.Map"%>
+<%@page import="java.util.HashMap"%>
+<%@page import="java.util.TreeMap"%>
+<%@page import="java.math.BigDecimal"%>
+<%@page import="java.util.Collection"%>
+<%@page import="java.util.Collections"%>
+<%@page import="java.util.Comparator"%>
+<%@page import="java.util.Locale"%> 
+<%@page import="java.lang.Number"%>
+<%@page import="java.text.NumberFormat"%>
+<%@page import="br.com.neorelato.sql.Table"%>
+<%@page import="br.com.artepropria.reports.RelatorioControleVendas"%>
+
+<html>
+	<head>  
+	<title>Relatório de Controle de Vendas</title>
+	<link rel="stylesheet" href="/adm/estilos.css" type="text/css">
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	  <style type="text/css">
+		  td div {
+			  color:#FF0000; 
+			  padding:400px; 
+			  height:10px; 
+			  overflow:auto; 
+		  }
+	  </style>
+	</head>
+ 	
+	<%
+		//style="page-break-after:always"	
+		String idivendedor = (null!=request.getParameter("idivendedor") && ""!=request.getParameter("idivendedor")?(String)request.getParameter("idivendedor"): "");
+		String nomeFilial = (null!=request.getParameter("nomefilial") && ""!=request.getParameter("nomefilial")?request.getParameter("nomefilial"): "TODAS");
+		String datainicio = (null!=request.getParameter("datainicial")?request.getParameter("datainicial"): "22/06/2007");
+		String datafim  = (null!=request.getParameter("datafinal")?request.getParameter("datafinal"): "21/07/2007");
+		String opstipo  = "V";
+		String idsfilial  = (null!=request.getParameter("idifilial")?request.getParameter("idifilial"): "");
+		String mostratudo = (null!=request.getParameter("opsrelatorio")?request.getParameter("opsrelatorio"): "S");
+	%>
+	 
+	<%!		
+		String cor = "#FFFFFF"; 
+		
+		Locale pt_BR = new Locale("pt", "BR");
+		NumberFormat df = NumberFormat.getCurrencyInstance(pt_BR); 
+		NumberFormat pf = NumberFormat.getInstance(pt_BR);
+
+
+		String formataNumero(BigDecimal value){			
+			//Double.parseDouble
+			String valor = df.format(value);
+			return valor.replaceAll(" ", " ");	
+		}
+
+		String formataNumero(double value){			
+			//Double.parseDouble
+			String valor = df.format(value);
+			return valor.replaceAll(" ", " ");	
+		}
+		
+		String formataNumero(Double value){
+			//Double.parseDouble
+			String valor = df.format(value);
+			return valor.replaceAll("R\\$ ", "");	
+		}
+		
+		String formataValor(double value){
+			String valor = pf.format(value);
+			return valor.replaceAll("%", " ");	  
+		}
+
+		String formataValor(BigDecimal value){
+			String valor = df.format(value);
+			return valor;	  
+		}
+		
+		String formataDataBD(String data){
+			return String.valueOf((Cast.toDate(data))); 
+		}
+		
+		void ordena(List lista,int valor){
+			final int coluna  = valor;
+			Collections.sort(lista , new Comparator() {					
+				public int compare(Object o1, Object o2) {				
+					List l1 = (List) o1;
+					List l2 = (List) o2;
+					System.out.println(l1);
+					System.out.println(l2);
+					int n1 = 0;
+					int n2 = 0;
+					n1 = Cast.toInt((String) l1.get(coluna));
+					n2 = Cast.toInt((String) l2.get(coluna));
+					return n1 < n2? -1 : (n1 > n2 ? +1 : 0);			
+				}
+			});
+		}
+		
+		BigDecimal calculaPercentural(Object valor, Object desconto){
+			BigDecimal retorno = BigDecimal.valueOf(0);
+			
+			retorno = Cast.toBigDecimal(desconto).divide(Cast.toBigDecimal(valor), 4, BigDecimal.ROUND_HALF_EVEN).multiply(BigDecimal.valueOf(100));//.divide(Cast.toBigDecimal(valor));
+			retorno = retorno.setScale(2, BigDecimal.ROUND_HALF_EVEN);
+			return retorno;		
+		}
+		
+		BigDecimal calculaValor(Object valor, Object desconto){
+			BigDecimal retorno = BigDecimal.valueOf(0);
+			
+			retorno = Cast.toBigDecimal(valor).subtract(Cast.toBigDecimal(desconto));
+			retorno = retorno.setScale(2, BigDecimal.ROUND_HALF_EVEN);
+			return retorno;		
+		}
+		
+		public String mudaCor(){
+			if("#FFFFFF".equals(cor)){								
+				cor = "#E5E5E5";
+			}else{
+				cor = "#FFFFFF";
+			} 
+			return cor;
+		}
+		
+		boolean checaMostra(String vlsvalor){
+			if(Cast.toDouble(vlsvalor) > 0.00){
+				return true;
+			}else{
+				return false;
+			}
+		}
+
+	%>
+	 
+	<script>
+	
+	function abrePopup(theURL) {
+		 // alert("vai abrir "+ theURL);
+	  window.open(theURL,"ttt","toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=no,menubar=no,top=0, left=0, width=900, height=800");
+	}
+		  
+	function sendPageToPrinter()
+	{
+		var NS = (navigator.appName == "Netscape");		   
+		if(NS){			
+			window.print() ;
+		}else{			
+			var WebBrowser = '<OBJECT ID="WebBrowser1" WIDTH=0 HEIGHT=0 ' +
+			'CLASSID="CLSID:8856F961-340A-11D0-A96B-00C04FD705A2"></OBJECT>';		
+			document.body.insertAdjacentHTML('beforeEnd', WebBrowser);
+			WebBrowser1.ExecWB(6,11);
+		}
+	}
+	
+	
+	</script>
+	<body  text="#000000" leftmargin="0" topmargin="0" rightmargin="0" marginwidth="0" marginheight="0">
+		<center>
+			<table border="1" width="98%" height="98%" >
+			  <tr>				   			  		   
+			   	<td align="center" valign="top">
+					<!-- INICIO DA AREA DE CONTEUDO -->
+					<center>
+			            <br>	
+<%			            
+						if("null".equals(nomeFilial)){
+							nomeFilial = "TODAS";
+						}
+%>			            							
+					    <H1>Relatório de Controle de Vendas</H1>
+					    <H1>Filial : <%=nomeFilial%></H1>
+					    <H1>Período de <%=datainicio%> à <%=datafim%></H1>
+					    <form name ="teste" method=set>					 				           
+				           <img src="/adm/img/icone-imprimir.GIF" width="30" height="25" border="0"  style="cursor: pointer;" onClick="sendPageToPrinter();" >						 				           
+			           	</form>			
+				    	 
+				        <table  border="0" cellspacing="10" cellpadding="3" height="99%" width="100%" class="tablebody">
+				        	<tr bgcolor="#cccccc"> 
+				        		<th align="center" width="20%">Vendedor</th>
+				        		<th align="center" width="20%">Vendido</th>
+				        		<th align="center" width="10%">Sinal(+)</th>
+				        		<th align="center" width="10%">Retirada(+)</th>
+				        		<th align="center" width="10%">Baixas(+)</th>
+				        		<th align="center" width="10%">A Receb(=)</th>
+				        		<th align="center" width="20%">Base Comissão(=)</th>
+				          	</tr>
+
+<%
+		
+		
+		if("null".equals(idsfilial)){
+			idsfilial = "";
+		}
+		RelatorioControleVendas rcv = new RelatorioControleVendas(datainicio,datafim,idivendedor,idsfilial,"S");
+		try{
+			
+			Map mapaGeral = new TreeMap();
+			
+			List listaGeral = new ArrayList();
+			List linhaGeral = new ArrayList();
+			
+			Map mapaVen = rcv.pegaValorVendido();
+			
+			Collection thing = mapaVen.values();
+			if(thing.size() > 0){
+				Iterator ithing = thing.iterator();
+				while(ithing.hasNext()){
+					List rthing = (List)ithing.next();
+					if(rthing.size() > 0){
+						Iterator ivendedor = rthing.iterator();
+						while(ivendedor.hasNext()){
+							List rvendedor = (List)ivendedor.next();
+							linhaGeral = new ArrayList();
+							linhaGeral.add(Cast.toString(rvendedor.get(0)).trim().toUpperCase());//nomedovendedor
+							linhaGeral.add(rvendedor.get(1));//codpedido
+							linhaGeral.add(rvendedor.get(3));//datapedido
+							linhaGeral.add(rvendedor.get(2));//vendido
+							linhaGeral.add(rvendedor.get(4));//sinal
+							linhaGeral.add(new BigDecimal(0));//retirada
+							linhaGeral.add(new BigDecimal(0));//baixas
+							linhaGeral.add(rcv.calculaValorReceber(rvendedor.get(2),rvendedor.get(4),new BigDecimal(0),new BigDecimal(0)));//a receber
+							linhaGeral.add(rcv.calculaBaseComissao(rvendedor.get(4),new BigDecimal(0),new BigDecimal(0)));//base de comissao
+							linhaGeral.add(rvendedor.get(5));//idvendedor
+							//listaGeral.add(linhaGeral);
+							mapaGeral = rcv.acumulaListaMapa(mapaGeral,Cast.toString(rvendedor.get(0)).trim().toUpperCase(),linhaGeral);
+						}
+					}
+				}
+			}
+			mapaVen = null;
+			Map mapaRet = rcv.pegaValorRetirada();
+
+			thing = mapaRet.values();
+			if(thing.size() > 0){
+				Iterator ithing = thing.iterator();
+				while(ithing.hasNext()){
+					List rthing = (List)ithing.next();
+					if(rthing.size() > 0){
+						Iterator ivendedor = rthing.iterator();
+						while(ivendedor.hasNext()){
+							List rvendedor = (List)ivendedor.next();
+							linhaGeral = new ArrayList();
+							linhaGeral.add(Cast.toString(rvendedor.get(0)).trim().toUpperCase());//nomedovendedor
+							linhaGeral.add(rvendedor.get(1));//codpedido
+							linhaGeral.add(rvendedor.get(3));//datapedido
+							linhaGeral.add(rvendedor.get(2));//vendido
+							linhaGeral.add(new BigDecimal(0));//sinal
+							linhaGeral.add(rvendedor.get(4));//retirada
+							linhaGeral.add(new BigDecimal(0));//baixas
+							linhaGeral.add(rcv.calculaValorReceber(rvendedor.get(2),new BigDecimal(0),rvendedor.get(4),new BigDecimal(0)));//a receber
+							linhaGeral.add(rcv.calculaBaseComissao(new BigDecimal(0),rvendedor.get(4),new BigDecimal(0)));//base de comissao
+							linhaGeral.add(rvendedor.get(5));//idvendedor
+							//listaGeral.add(linhaGeral);
+							mapaGeral = rcv.acumulaListaMapa(mapaGeral,Cast.toString(rvendedor.get(0)).trim().toUpperCase(),linhaGeral);
+						}
+					}
+				}
+			}
+			mapaRet = null;
+			Map mapaBx = rcv.pegaBaixasDepBol();
+			
+			thing = mapaBx.values();
+			if(thing.size() > 0){
+				Iterator ithing = thing.iterator();
+				while(ithing.hasNext()){
+					List rthing = (List)ithing.next();
+					if(rthing.size() > 0){
+						Iterator ivendedor = rthing.iterator();
+						while(ivendedor.hasNext()){
+							List rvendedor = (List)ivendedor.next();
+							linhaGeral = new ArrayList();
+							linhaGeral.add(Cast.toString(rvendedor.get(0)).trim().toUpperCase());//nomedovendedor
+							linhaGeral.add(rvendedor.get(1));//codpedido
+							linhaGeral.add(rvendedor.get(3));//datapedido
+							linhaGeral.add(rvendedor.get(2));//vendido
+							linhaGeral.add(new BigDecimal(0));//sinal
+							linhaGeral.add(new BigDecimal(0));//retirada
+							linhaGeral.add(rvendedor.get(4));//baixas
+							linhaGeral.add(rcv.calculaValorReceber(rvendedor.get(2),new BigDecimal(0),new BigDecimal(0),rvendedor.get(4)));//a receber
+							linhaGeral.add(rcv.calculaBaseComissao(new BigDecimal(0),new BigDecimal(0),rvendedor.get(4)));//base de comissao
+							linhaGeral.add(rvendedor.get(5));//idvendedor
+							//listaGeral.add(linhaGeral);
+							mapaGeral = rcv.acumulaListaMapa(mapaGeral,Cast.toString(rvendedor.get(0)).trim().toUpperCase(),linhaGeral);
+						}
+					}
+				}
+			}
+			mapaBx = null;
+			System.out.println("demooooora");
+ 			thing = mapaGeral.values();
+ 			if(thing.size() > 0){
+ 				mapaGeral = null;
+ 				Iterator iTudo = thing.iterator();
+ 				while(iTudo.hasNext()){
+ 					listaGeral = (List)iTudo.next();
+					if(listaGeral.size() > 0){
+						//ordena(listaGeral,0);
+						Iterator itGeral = listaGeral.iterator();
+						String vendedorOld = "";
+						String vendedorNew = "";
+						Integer idVendedorOld = new Integer(0);
+						Integer idVendedorNew = new Integer(0);
+						BigDecimal vldVendido = new BigDecimal(0);
+						BigDecimal vldSinal = new BigDecimal(0);
+						BigDecimal vldRet = new BigDecimal(0);
+						BigDecimal vldBx= new BigDecimal(0);
+						BigDecimal vldReceb = new BigDecimal(0);
+						BigDecimal vldBase = new BigDecimal(0);
+						while(itGeral.hasNext()){
+							List rowGeral = (List)itGeral.next();
+							vendedorNew = (String)rowGeral.get(0);
+							idVendedorNew = (Integer)rowGeral.get(9);
+							if(!vendedorNew.equals(vendedorOld)){
+								if(!"".equals(vendedorOld)){
+									BigDecimal TRESPCT = ((new BigDecimal(3)).divide(new BigDecimal(100),2,BigDecimal.ROUND_HALF_EVEN));
+									BigDecimal testeRafa = vldBase.multiply(TRESPCT).setScale(2,BigDecimal.ROUND_HALF_EVEN);
+		%>
+						          	<tr bgcolor="<%=mudaCor()%>"> 
+						        		<td align="center" width="20%"><%=vendedorOld%></td>
+						        		<td align="right" width="20%">
+							        		<a href="javascript:abrePopup('controlevendas_vendido.jsp?datainicio=<%=datainicio%>&datafim=<%=datafim%>&idivendedor=<%=idVendedorOld%>&idifilial=<%=idsfilial%>&nomevendedor=<%=vendedorOld%>');">
+							        		<%=formataValor(vldVendido)%></a>
+						        		</td>
+						        		<td align="right" width="10%">
+						        			<a href="javascript:abrePopup('controlevendas_sinal.jsp?datainicio=<%=datainicio%>&datafim=<%=datafim%>&idivendedor=<%=idVendedorOld%>&idifilial=<%=idsfilial%>&nomevendedor=<%=vendedorOld%>');">
+							        		<%=formataValor(vldSinal)%></a>
+							        	</td>						        		
+						        		<td align="right" width="10%">
+						        			<a href="javascript:abrePopup('controlevendas_retirada.jsp?datainicio=<%=datainicio%>&datafim=<%=datafim%>&idivendedor=<%=idVendedorOld%>&idifilial=<%=idsfilial%>&nomevendedor=<%=vendedorOld%>');">
+						        			<%=formataValor(vldRet)%></a>
+						        		</td>
+						        		<td align="right" width="10%">
+						        			<a href="javascript:abrePopup('controlevendas_baixas.jsp?datainicio=<%=datainicio%>&datafim=<%=datafim%>&idivendedor=<%=idVendedorOld%>&idifilial=<%=idsfilial%>&nomevendedor=<%=vendedorOld%>');">
+						        			<%=formataValor(vldBx)%></a>
+						        		</td>
+						        		<td align="right" width="10%"><%=formataValor(vldReceb)%></td>
+						        		<td align="right" width="20%"><%=formataValor(vldBase)%> # <%=testeRafa%></td>
+						          	</tr>	 			           
+			
+		<%						
+								}
+								vendedorOld = vendedorNew;
+								idVendedorOld = idVendedorNew;
+								vldVendido = Cast.toBigDecimal(rowGeral.get(3)).setScale(2,BigDecimal.ROUND_HALF_EVEN);
+								vldSinal = Cast.toBigDecimal(rowGeral.get(4)).setScale(2,BigDecimal.ROUND_HALF_EVEN);
+								vldRet = Cast.toBigDecimal(rowGeral.get(5)).setScale(2,BigDecimal.ROUND_HALF_EVEN);
+								vldBx= Cast.toBigDecimal(rowGeral.get(6)).setScale(2,BigDecimal.ROUND_HALF_EVEN);
+								vldReceb = Cast.toBigDecimal(rowGeral.get(7)).setScale(2,BigDecimal.ROUND_HALF_EVEN);
+								vldBase = Cast.toBigDecimal(rowGeral.get(8)).setScale(2,BigDecimal.ROUND_HALF_EVEN);
+							}else{
+								vldVendido = vldVendido.add(Cast.toBigDecimal(rowGeral.get(3)).setScale(2,BigDecimal.ROUND_HALF_EVEN));
+								vldSinal = vldSinal.add(Cast.toBigDecimal(rowGeral.get(4)).setScale(2,BigDecimal.ROUND_HALF_EVEN));
+								vldRet = vldRet.add(Cast.toBigDecimal(rowGeral.get(5)).setScale(2,BigDecimal.ROUND_HALF_EVEN));
+								vldBx= vldBx.add(Cast.toBigDecimal(rowGeral.get(6)).setScale(2,BigDecimal.ROUND_HALF_EVEN));
+								vldReceb = vldReceb.add(Cast.toBigDecimal(rowGeral.get(7)).setScale(2,BigDecimal.ROUND_HALF_EVEN));
+								vldBase = vldBase.add(Cast.toBigDecimal(rowGeral.get(8)).setScale(2,BigDecimal.ROUND_HALF_EVEN));
+							}
+						}
+						BigDecimal TRESPCT = ((new BigDecimal(3)).divide(new BigDecimal(100),2,BigDecimal.ROUND_HALF_EVEN));
+						BigDecimal testeRafa = vldBase.multiply(TRESPCT).setScale(2,BigDecimal.ROUND_HALF_EVEN);
+
+					 
+		%>
+		
+						<tr bgcolor="<%=mudaCor()%>"> 
+			        		<td align="center" width="20%"><%=vendedorOld%></td>
+			        		
+			        		<td align="right" width="20%">
+				        		<a href="javascript:abrePopup('controlevendas_vendido.jsp?datainicio=<%=datainicio%>&datafim=<%=datafim%>&idivendedor=<%=idVendedorOld%>&idifilial=<%=idsfilial%>&nomevendedor=<%=vendedorOld%>');">
+				        		<%=formataValor(vldVendido)%>
+			        		</td>
+			        		<td align="right" width="10%">
+			        			<a href="javascript:abrePopup('controlevendas_sinal.jsp?datainicio=<%=datainicio%>&datafim=<%=datafim%>&idivendedor=<%=idVendedorOld%>&idifilial=<%=idsfilial%>&nomevendedor=<%=vendedorOld%>');">
+				        		<%=formataValor(vldSinal)%></a>
+				        	</td>						        		
+			        		<td align="right" width="10%">
+			        			<a href="javascript:abrePopup('controlevendas_retirada.jsp?datainicio=<%=datainicio%>&datafim=<%=datafim%>&idivendedor=<%=idVendedorOld%>&idifilial=<%=idsfilial%>&nomevendedor=<%=vendedorOld%>');">
+			        			<%=formataValor(vldRet)%></a>
+			        		</td>
+			        		<td align="right" width="10%">
+			        			<a href="javascript:abrePopup('controlevendas_baixas.jsp?datainicio=<%=datainicio%>&datafim=<%=datafim%>&idivendedor=<%=idVendedorOld%>&idifilial=<%=idsfilial%>&nomevendedor=<%=vendedorOld%>');">
+			        			<%=formataValor(vldBx)%></a>
+			        		</td>
+			        		<td align="right" width="10%"><%=formataValor(vldReceb)%></td>
+			        		<td align="right" width="20%"><%=formataValor(vldBase)%> # <%=testeRafa%></td>
+
+			          	</tr>
+		
+		<%
+					}
+				}
+			}
+		
+		}catch(Exception e){
+			e.printStackTrace();
+			System.out.println("ERRROOOO");
+		}
+%>
+				          		 			           
+				    	</table>	
+					</center>									
+				</td>
+			 </tr>
+			</table>					
+		</center>
+	</body>
+</html>

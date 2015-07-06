@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+		<menu-list>
+			<menu label="imagens" path="/imagens">
+		<menu label=" boletim" path="/imagens/ boletim">
+			<menu label="topo.jpg" path=" boletim/topo.jpg" length="36265 Bytes"/>
+		</menu>
+		<menu label=" diretoria" path="/imagens/ diretoria">
+			<menu label="arlete.jpg" path=" diretoria/arlete.jpg" length="9706 Bytes"/>
+			<menu label="benizete.jpg" path=" diretoria/benizete.jpg" length="10019 Bytes"/>
+			<menu label="cezarbritto.jpg" path=" diretoria/cezarbritto.jpg" length="8703 Bytes"/>
+			<menu label="cezarbritto1.bmp" path=" diretoria/cezarbritto1.bmp" length="65334 Bytes"/>
+			<menu label="eymard.jpg" path=" diretoria/eymard.jpg" length="10141 Bytes"/>
+			<menu label="fabricio.jpg" path=" diretoria/fabricio.jpg" length="2744 Bytes"/>
+			<menu label="fabricio1.jpg" path=" diretoria/fabricio1.jpg" length="2744 Bytes"/>
+			<menu label="joaopedro.jpg" path=" diretoria/joaopedro.jpg" length="9619 Bytes"/>
+			<menu label="joselice.jpg" path=" diretoria/joselice.jpg" length="10223 Bytes"/>
+			<menu label="lico.jpg" path=" diretoria/lico.jpg" length="9597 Bytes"/>
+			<menu label="lucio.jpg" path=" diretoria/lucio.jpg" length="10121 Bytes"/>
+			<menu label="luisgomes.jpg" path=" diretoria/luisgomes.jpg" length="2580 Bytes"/>
+			<menu label="nilton.jpg" path=" diretoria/nilton.jpg" length="10474 Bytes"/>
+			<menu label="osvaldo.jpg" path=" diretoria/osvaldo.jpg" length="11200 Bytes"/>
+			<menu label="ronaldo.jpg" path=" diretoria/ronaldo.jpg" length="9267 Bytes"/>
+			<menu label="sady.jpg" path=" diretoria/sady.jpg" length="10290 Bytes"/>
+			<menu label="salvador.jpg" path=" diretoria/salvador.jpg" length="11012 Bytes"/>
+			<menu label="silviaburma.jpg" path=" diretoria/silviaburma.jpg" length="9027 Bytes"/>
+			<menu label="silviamourao.jpg" path=" diretoria/silviamourao.jpg" length="11431 Bytes"/>
+		</menu>
+		<menu label=" diversos" path="/imagens/ diversos">
+			<menu label="Evento MPT 18.jpg" path=" diversos/Evento MPT 18.jpg" length="30186 Bytes"/>
+			<menu label="IAB.jpg" path=" diversos/IAB.jpg" length="38814 Bytes"/>
+			<menu label="busato.jpg" path=" diversos/busato.jpg" length="12089 Bytes"/>
+			<menu label="busato1.jpg" path=" diversos/busato1.jpg" length="8469 Bytes"/>
+			<menu label="busato_diret.jpg" path=" diversos/busato_diret.jpg" length="29301 Bytes"/>
+			<menu label="busato_osvaldo.jpg" path=" diversos/busato_osvaldo.jpg" length="24389 Bytes"/>
+			<menu label="diret1.jpg" path=" diversos/diret1.jpg" length="26625 Bytes"/>
+		</menu>
+		<menu label=" modelos" path="/imagens/ modelos">
+			<menu label="classificados.jpg" path=" modelos/classificados.jpg" length="394 Bytes"/>
+			<menu label="cross_and_flame_animation.gif" path=" modelos/cross_and_flame_animation.gif" length="1397 Bytes"/>
+			<menu label="cross_and_flame_animation.gif.1107278767402" path=" modelos/cross_and_flame_animation.gif.1107278767402" length="1397 Bytes"/>
+			<menu label="imagem1.jpg" path=" modelos/imagem1.jpg" length="663 Bytes"/>
+			<menu label="imagem2.jpg" path=" modelos/imagem2.jpg" length="13556 Bytes"/>
+			<menu label="imagem3.jpg" path=" modelos/imagem3.jpg" length="520 Bytes"/>
+			<menu label="imagem4.jpg" path=" modelos/imagem4.jpg" length="11724 Bytes"/>
+		</menu>
+		<menu label="brasil.gif" path="brasil.gif" length="5012 Bytes"/>
+		<menu label="mumia.jpg" path="mumia.jpg" length="6206 Bytes"/>
+		<menu label="natal1.jpg" path="natal1.jpg" length="3144 Bytes"/>
+		<menu label="natal2.jpg" path="natal2.jpg" length="3558 Bytes"/>
+		<menu label="natal3.jpg" path="natal3.jpg" length="3141 Bytes"/>
+		<menu label="natal4.jpg" path="natal4.jpg" length="1535 Bytes"/>
+</menu>
+</menu-list>

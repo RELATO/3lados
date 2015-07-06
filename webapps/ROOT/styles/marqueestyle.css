@@ -1,0 +1,81 @@
+/* Style Sheet for The Ruins of Morning (c) Tarmle 2002 */
+
+
+SMALL {font-size: 7pt;}
+H1,H2,H3  {font-family: verdana,arial,sans-serif;}
+
+/*
+LI  {margin-top: 3px; margin-left: -15px;}
+*/
+
+/* TITLE'S & HEADINGS */
+.title  {font: normal 7pt verdana,arial,sans-serif; margin-left:20px;}
+.th,.sih  {color: #999999; font-weight: bold;}  /* title head & side head */
+.sth {font-weight:bold;} /* sub title head */
+.gth {font-weight:normal;} /* gallery item head */
+.mrqtitle {font: bold 20px arial,sans-serif; color: black;}
+
+/* TABLES */
+TD.mainrc, TD.rcc {background: #dddddd; border-right: solid 1px #bbbbbb;} /* root content cell */
+TD.siderc, TD.sbc {border-right: solid 1px #bbbbbb;} /* side bar content cell */
+TD.mnc, TD.snc {background: #cccccc; border: solid 1px #bbbbbb;}  /* main navigation cells & secondary navigation cells */
+
+TABLE.sidet, TABLE.stab  {border-top: solid 2px #dddddd; border-bottom: solid 2px #dddddd;} /* side */
+TD.sidetc, TD.sitc {background:#eeeeee} /* side title cell */
+TD.sidecc, TD.sib {color: #666666;}
+
+TABLE.maint, TABLE.mtab  {border-top: solid 2px #bbbbbb; border-bottom: solid 2px #bbbbbb; background: #eeeeee;} /* main */
+TD.maintc, TD.mctc {background: #eeeeee;} /* main content title cell */
+TD.maincc, TD.mcc {background: #eeeeee; border-top: solid 2px #bbbbbb;} /* main content cell */
+
+TABLE.gtab  {border-top: solid 2px #999999; border-bottom: solid 2px #999999; background: #dddddd;} /* gallery item table */
+TD.galtc, TD.gc {background: #dddddd;} /* gallery item title cell */
+TD.galcc  {background: #dddddd;}  /* gallery item content cell */
+
+TABLE.subt, TABLE.sbtab  {border-top: solid 2px #999999; border-bottom: solid 2px #999999; background: #eeeeee} /* sub content table */
+TD.subtc, TD.sttc {background: #dddddd; color: #777777;} /* sub content title cell  */
+TD.subcc {background: #eeeeee;} /* sub content cell */
+
+TABLE.ltab  {border-top: dashed 1px #999999;} /* log */
+TD.ldc {background: white; border: solid 4px #eeeeee; color: #666666} /* log date cells */
+TD.lcc {} /* log content cells */
+
+TABLE.lctab  {} /* comment */
+TD.lcdc {background: white;} /* comment date cells */
+TD.lccc {} /* comment content cells */
+
+TABLE.code, TABLE.code TD {background: #ffffff; margin-left: 8px; font: normal 12px courier new, courier, monospace;} /* script code table */
+
+
+/* BODY */
+
+
+
+/* LINK STYLES */
+A  {text-decoration: none;}
+A:link  {color: #800000; font-weight: normal;font-size: 10pt;}
+A:visited  {color: #800000; font-weight: normal;font-size: 10pt;}//{color: #000F80; font-size: 10pt;}
+A:hover  {color: #800000; font-weight: normal;font-size: 10pt;}//{color: red;}
+
+A:link.mnl, A:link.snl  {color:#FF0000;} /* main navigation links & secondary navigation links (head and foot)) */
+A:visited.mnl, A:visited.snl  {color:#FF0000;}
+A:hover.mnl, A:hover.snl  {color:#FF0000;} //A:hover.snl  {color:red;}
+
+A:link.ml, A:visited.ml  {font-size: 14pt; font-weight: normal; color: black;} /* main links */
+P.th A:link, P.th A:visited  {color: #999999;}  /* title head navigation */
+P.th A:hover, A:hover.ml  {color: red;}
+
+P.sth A:link, P.sth A:visited {color: #777777;}
+P.gth A:link, P.gth A:visited {color: #777777;}
+P.sth A:hover, P.gth A:hover  {color: red;}
+
+TD A:link.img IMG, TD A:visited.img IMG  {border: solid 1px #999999;}  /* image link */
+TD A:hover.img IMG  {border: solid 1px red;}  /* image link */
+
+
+/* MISC */
+.quote, .qot  {font: normal 8pt courier new,courier,serif; text-align: center;} /* quote */
+.cred, .crd  {font-family: times new roman; text-align: left;} /* quote credit */
+.past  {font-size: 9px; color: #777777;}
+.past B  {font-weight: bold;}
+.incode {font-family: courier new, monospace; font-weight: bold;}

@@ -1,0 +1,139 @@
+	html, body, div, span, applet, object, iframe,
+	h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+	a, abbr, acronym, address, big, cite, code,
+	del, dfn, em, img, ins, kbd, q, s, samp,
+	small, strike, strong, sub, sup, tt, var,
+	b, u, i, center,
+	dl, dt, dd, ol, ul, li,
+	fieldset, form, label, legend,
+	table, caption, tbody, tfoot, thead, tr, th, td,
+	article, aside, canvas, details, embed, 
+	figure, figcaption, footer, header, hgroup, 
+	menu, nav, output, ruby, section, summary,
+	time, mark, audio, video {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		font-size: 100%;
+		font: inherit;
+		vertical-align: baseline;
+	}
+	/* HTML5 display-role reset for older browsers */
+	article, aside, details, figcaption, figure, 
+	footer, header, hgroup, menu, nav, section {
+		display: block;
+	}
+	body {
+		line-height: 1;
+		background-color:#1d5083;
+		color: white;
+		font-size: 12px;
+		font-family: Tahoma;
+		margin:auto;
+	}
+	ol, ul {
+		list-style: none;
+	}
+	blockquote, q {
+		quotes: none;
+	}
+	blockquote:before, blockquote:after,
+	q:before, q:after {
+		content: '';
+		content: none;
+	}
+	table {
+		border-collapse: collapse;
+		border-spacing: 0;
+	}
+	#tabela{
+		background-color:#3163A0;
+		border: 2px solid #003366; 
+		border-collapse: collapse; 
+		margin: 60px auto;
+		}
+	#tabela span{
+		font-size:14px;
+		font-weight:bold;
+		display:inline-block;
+	
+	}
+		.seila {padding-left: 5px;}
+		td.bordatopo {border-top: 1px solid #003366;}
+		input.botao {
+		border: 1px solid white;
+		background-color: #003366;
+		color: white;
+		font-weight: bolder;
+		font-family: Verdana, Tahoma, Arial, sans-serif;
+		font-size: 10px;
+		width: 100px;
+		height: 20px;
+		text-align: center;
+		}
+		input.botaoover {
+		border: 1px solid #003366;
+		background-color: white;
+		color: #003366;
+		font-weight: bolder;
+		font-family: Verdana, Tahoma, Arial, sans-serif;
+		font-size: 10px;
+		width: 100px;
+		height: 20px;
+		text-align: center;
+		cursor: pointer;
+		}
+		input.botao1 {
+		border: 1px solid white;
+		background-color: #003366;
+		color: white;			
+		font-weight: bolder;
+		font-family: Verdana, Tahoma, Arial, sans-serif;
+		font-size: 10px;
+		width: 120px;
+		height: 20px;
+		text-align: center;
+		}
+		input.botaoover1 {
+		border: 1px solid #003366;
+		background-color: white;
+		color: #003366;
+		font-weight: bolder;
+		font-family: Verdana, Tahoma, Arial, sans-serif;
+		font-size: 10px;
+		width: 120px;
+		height: 20px;
+		text-align: center;
+		cursor: pointer;
+		}	
+	.naover {
+		display: none; 
+		}
+	.ver {
+		display: inline; 
+	}
+	input.botao {
+		background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #3a8de0), color-stop(1, #336a9e) );
+		background:-moz-linear-gradient( center top, #3a8de0 5%, #336a9e 100% );
+		filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#3a8de0', endColorstr='#336a9e');
+		background-color:#3a8de0;
+		border:1px solid #2e2e2e;
+		display:inline-block;
+		color:#ffffff;
+		font-family:tahoma;
+		font-size:12px;
+		font-weight:bold;
+		padding:1px auto;
+		text-decoration:none;
+		width:auto;
+		margin:auto;
+	}input.botao:hover {
+		background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #336a9e), color-stop(1, #3a8de0) );
+		background:-moz-linear-gradient( center top, #336a9e 5%, #3a8de0 100% );
+		filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#336a9e', endColorstr='#3a8de0');
+		background-color:#336a9e;
+	}input.botao:active {
+		position:relative;
+		top:1px;
+	}
+	

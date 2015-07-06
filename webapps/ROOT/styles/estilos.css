@@ -1,0 +1,116 @@
+.A2{color:#ff0000; text-decoration:none;  ; font-size: 11px; font-family:verdana}
+.A2:hover{text-decoration:underline ; color: #666666 }
+.A2:active{text-decoration:underline ; color: #666666 }
+
+A{color:#EA0437; text-decoration:underline;  ; font-size: 10px; font-family:tahoma}
+A:hover{text-decoration:underline ; color: #EA0437 }
+A:active{text-decoration:underline ; color: #EA0437 }
+
+.botao {
+	BORDER-RIGHT: #2f0d0d 1pt solid;
+	BORDER-TOP: #CCCCCC 1pt solid;
+	BORDER-LEFT: #CCCCCC 1pt solid;
+	BORDER-BOTTOM: #2f0d0d 1pt solid;
+	FONT-SIZE: 11 px;
+	COLOR: #000000;
+	FONT-FAMILY: verdana, helvetica, Arial;
+	BACKGROUND-COLOR: #e5e5e5
+	}
+
+B{text-decoration: bolder ; color:#006600 ; font-size:11px; font-family:verdana}
+strong{text-decoration: bolder ; color:#000000 ; font-size:11px; font-family:verdana}
+I{text-decoration: italic ; color:#ff0000 ; font-size:11px; font-family:verdana}
+
+BODY {
+		z-index:0;  left:0; top:0; font-family:verdana,helvetica; position:relative; font-size:11px; background-color:transparent ; color=#666666
+	}
+
+.form2{ background-color: #ffffff ; border-top:#666666 ;border-left:#666666   ;border-width : 1px ; border-style : double ; border-color : #003366 ; FONT-FAMILY: verdana,helvetica,; FONT-SIZE: 11px ; color: #003366}
+
+h1{ text-decoration: none; color:#006600 ; font-size:12px ; background:transparent;font-family:verdana, font-weight:normal}
+h2{ text-decoration: none; color:#666666 ; font-size:12px ; background:transparent;font-family:verdana, font-weight:bold}
+h3{ text-decoration: none; color:#000000 ; font-size:12px ; background:transparent;font-family:verdana, font-weight:bold}
+
+hr{psition:relative; left:0px ; padding:0px;top:-5px;height:1px ;width:100%;color:#009900}
+
+TABLE {	z-index:0;  
+	left:0; 
+	top:0; 
+	font-family:verdana,helvetica; 
+	position:relative; 
+	font-size:11px; 
+	background-color:transparent; 
+	color=#666666
+}
+
+TABLE2 {
+	z-index:0;
+	left:0;
+	top:0;
+	font-family:verdana,helvetica;
+	position:relative;
+	font-size:11px;
+	background-color:transparent;
+	color=#666666; 		
+	#width: 760px;
+	#height: 144px;
+}
+
+.IMGborder{border-width:1 ; border-style:double ; color:#ff6633}
+
+.text01{z-index:0;  left:0; top:0; font-family:verdana,helvetica; position:static; font-size:11px; background-color:transparent ; color=#000000}
+.text02{z-index:0;  left:0; top:0; font-family:verdana,helvetica; position:relative; font-size:11px; color=#003300}
+.text03{z-index:0;  left:0; top:0; font-family:verdana,helvetica; position:relative; font-size:10px; color=#666666}
+
+.tableBody{
+	BACKGROUND-COLOR: #ffffff;
+	z-index:0;
+	left:0;
+	top:0;
+	font-family:verdana,helvetica;
+	position:relative;
+	font-size:11px;
+color=#666666 ;
+	border: 0 ;
+}
+.tableTitulo{ BACKGROUND-COLOR: #cccccc;font-family:verdana,helvetica; position:relative; font-size:11px;  color=#000000; font-weight:bold }
+.tablePar{ BACKGROUND-COLOR: #cccccc}
+.tableImpar{ BACKGROUND-COLOR: white }
+
+INPUT{
+	background-color: #e5e5e5;
+	FONT-FAMILY: tahoma, verdana, helvetica, arial ;
+	FONT-SIZE: 11px;
+	color: #000000;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #999999;
+	border-right-color: #666666;
+	border-bottom-color: #666666;
+	border-left-color: #999999;
+}
+SELECT{
+	background-color: #ffffff;
+	FONT-FAMILY: verdana, helvetica, ;
+	FONT-SIZE: 11px;
+	color: #000000;
+	border: 1px solid #ff0000;
+}
+TEXTAREA{ background-color: #cccccc ; border-width : 1px ; border-style : double ; border-color : #ff0000 ; FONT-FAMILY: verdana,helvetica,; FONT-SIZE: 11px ; color: #000000}
+
+
+.tableRowOdd{ BACKGROUND-COLOR: #e5e5e5}
+
+.tableRowEven{ BACKGROUND-COLOR: white }
+
+.formTextUpper{ text-transform: uppercase; background-color: #ffffff ; border-top:#666666 ;border-left:#666666   ;border-width : 1px ; border-style : double ; border-color : #003366 ; FONT-FAMILY: verdana,helvetica,; FONT-SIZE: 11px ; color: #003366}
+
+.formTextLower{ text-transform: lowercase; background-color: #ffffff ; border-top:#666666 ;border-left:#666666   ;border-width : 1px ; border-style : double ; border-color : #003366 ; FONT-FAMILY: verdana,helvetica,; FONT-SIZE: 11px ; color: #003366}
+
+.formTextNumber{ text-align:right; background-color: #ffffff ; border-top:#666666 ;border-left:#666666   ;border-width : 1px ; border-style : double ; border-color : #003366 ; FONT-FAMILY: verdana,helvetica,; FONT-SIZE: 11px ; color: #003366}

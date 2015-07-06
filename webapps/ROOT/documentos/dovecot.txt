@@ -1,0 +1,33 @@
+protocols = imap pop3
+ssl_disable = yes
+disable_plaintext_auth = no
+log_path = /var/log/dovecot.log
+info_log_path = /var/log/dovecot.log
+log_timestamp = "%b %d %H:%M:%S "
+login_user = dovecot
+login_process_size = 64
+login_processes_count = 1
+login_max_processes_count = 8
+login_max_logging_users = 16
+login_log_format_elements = user=<%u> method=%m rip=%r lip=%l %c
+login_log_format = %$: %s
+first_valid_uid = 50
+mail_debug = yes
+#default_mail_env = maildir:%h/.maildir # you do not need this with Mail::Toaster and Dovecot 1.x
+mail_log_prefix = “%Us(%u): ”
+protocol imap {
+}
+protocol pop3 {
+}
+auth_verbose = yes
+auth_debug = yes
+auth default {
+mechanisms = plain
+passdb vpopmail {
+args =
+}
+userdb vpopmail {
+}
+user = root
+
+}

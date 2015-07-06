@@ -1,0 +1,19 @@
+User-Agent: *
+Disallow: 
+Disallow: /index_apfinalfeio.jsp
+Disallow: /basekana.jsp
+Disallow: /index_bkp.jsp
+Disallow: /index_RAFA.jsp
+Disallow: /index2.jsp
+Disallow: /index3.jsp
+Disallow: /index4.jsp
+Disallow: /index2011.jsp
+Disallow: /indexmenuteste.jsp
+Disallow: /indexkana.jsp
+Disallow: /indexlixo.jsp
+Disallow: /indexrelato.jsp
+Disallow: /indexroxo.jsp
+Disallow: /indexteste.jsp
+Disallow: /indexvozesteste.jsp
+Disallow: /indexvozesfemininas.jsp
+

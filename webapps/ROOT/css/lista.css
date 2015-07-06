@@ -1,0 +1,65 @@
+body, html {
+	background-color: #003366;
+	font: normal normal normal 1em/1.5em tahoma, sans-serif;
+}
+pre { font-family: tahoma;}
+
+	h1{
+		color:#fff;
+	}
+
+	#pagewrap {
+		margin:auto;
+		width: 900px;
+	}
+			
+			#search {
+				-webkit-border-radius: 10px;
+				background-color: white;
+				padding: 10px;
+				position: fixed;
+				right:40px;
+				top:-10px;
+				display: none;
+			}
+			
+				table {
+					background-color: white;
+					-webkit-border-radius: 10px;
+					width: 100%;
+					padding: 10px;
+					margin:auto;
+				}
+				
+				.linha{}
+
+						th.sortable {
+							color: #444;
+							cursor: pointer;
+							text-decoration: underline;
+						}
+						th.sortable:hover { color: black; }
+						th.sorted-asc, th.sorted-desc  { color: black; }
+						
+						p{
+							text-align:center;
+						}
+
+						td {
+							background-color: white;
+							width:auto;
+						}
+						
+						tr{
+							height:auto;
+						}
+						
+						td.odd {
+							background-color: #444;
+							color: white;
+						}
+						
+						td.hovered {
+						  background-color: lightblue;
+						  color: #444;
+						}

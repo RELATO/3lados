@@ -1,0 +1,51 @@
+/************************RESET CSS***************************/
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, sub, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {margin:0; padding:0; border:0; outline:0; font-size:100%; vertical-align:baseline; background:transparent; list-style-type:none; font-weight:400;}
+body {line-height:1;}
+article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary {display:block;}
+nav ul {list-style:none;}
+/* remember to define focus styles! */
+:focus {outline: 0;}
+/* tables still need 'cellspacing="0"' in the markup */
+blockquote, q {quotes:none;}
+blockquote:before, blockquote:after, q:before, q:after {content:""; content:none;}
+a {margin:0; padding:0; border:0; font-size:100%; vertical-align:baseline; background:transparent; text-decoration:none;}
+ins {background-color:#ff9; color:#000; text-decoration:none;}
+mark {background-color:#ff9; color:#000; font-style:italic; font-weight:700;}
+del {text-decoration: line-through;}
+abbr[title], dfn[title] {border-bottom:1px dotted #000; cursor:help;}
+table {border-collapse:collapse; border-spacing:0;}
+hr {display:block; height:1px; border:0; border-top:1px solid #cccccc; margin:1em 0; padding:0;}
+input, select {vertical-align:middle;}
+p {margin:10px 0 20px;}
+.right {float:right}
+.left {float:left}
+
+/************************************************************/
+
+body {font-family:"Lucida Grande","Lucida Sans Unicode",sans-serif; font-size:13px; line-height:16px; color:#444; background:url(../images/bg.png) repeat #eee; border-top:5px solid #333;}
+
+h2, h3 {font-size:24px; font-weight:700; color:#333; margin:10px 0 30px;}
+h3 {font-size:16px; color:#888; margin:10px 0;}
+
+#container {width:640px; margin:0 auto; padding:0 0 30px; display:inline-block;}
+#container:after {content:'.'; visibility:hidden; height:0; display:block; clear:both;}
+#container {display:block;}
+	#top {height:70px; margin:0 0 15px; overflow:hidden;}
+		#logo {width:276px; height:60px; margin:10px 0 0; text-indent:-9999px; display:block; background-image:url(../images/logo.png); float:left;}
+		
+		.backToArticle {padding:5px 10px; margin:25px 5px 0 0; -moz-border-radius:8px; border-radius:8px; -moz-box-shadow:#aaa 2px 2px 2px; -webkit-box-shadow:#aaa 2px 2px 2px; background-color:#1C8DC3; border:1px solid #fff; color:#fff; font-size:12px; font-weight:700; text-align:center; text-shadow:1px 1px 1px #333; display:block}
+		.backToArticle:hover {background-color:#333;}
+	
+	#content {padding:10px; background-color:#fff; border:1px solid #ccc; -moz-border-radius:5px; border-radius:5px; overflow:hidden}
+	.box {margin:0 0 20px; overflow:hidden;}
+	
+	.stileBak {margin:10px 5px 0 0; text-decoration:underline; color:#a2003b;}
+	
+	.bottom {width:620px; margin:20px auto; padding:10px; text-align:center; background-color:#fff; border:1px solid #ccc; -moz-border-radius:5px; border-radius:5px;}
+	.bottom a {color:#03F;}
+	
+	.red {color:#880000}
+	.keyword {color:#069}
+	.value {color:#090}
+	.string {color:blue}
+	
