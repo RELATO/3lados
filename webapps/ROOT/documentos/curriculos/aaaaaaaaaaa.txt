@@ -1,7 +1,0 @@
-
-só foi atualizado na turiassu
-
-
-alter table itemtransferenciaestoque add column IdiLocalOrigem int(11);
-
-alter table itemtransferenciaestoque add column IdiLocalDestino int(11);
